@@ -7,7 +7,7 @@ const { genTpl } = require("./tpl");
  * 获取 markdown 内容
  */
 function getMarkdown() {
-  const filePath = path.resolve(__dirname, "..", "docs", "README.md");
+  const filePath = path.resolve(__dirname, "..", "src", "README.md");
   const content = fse.readFileSync(filePath);
   return content.toString();
 }
@@ -17,7 +17,7 @@ function getMarkdown() {
  * @param {string} html html 内容
  */
 function outputHtml(html = "") {
-  const distDir = path.resolve(__dirname, "..", "dist");
+  const distDir = path.resolve(__dirname, "..", "docs");
   fse.ensureDirSync(distDir);
   const filePath = path.join(distDir, "index.html");
   fse.ensureFileSync(filePath);
