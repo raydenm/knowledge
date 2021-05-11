@@ -1,0 +1,21 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "前端知识体系",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangfupeng1988/what-is-fe.git"
+  },
+  "keywords": [
+    "前端",
+    "知识体系"
+  ],
+  "devDependencies": {
+    "fs-extra": "^9.0.1",
+    "markmap-lib": "^0.11.1"
+  }
+}

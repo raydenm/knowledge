@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+    <html>
+      <head><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web</title>
+    <style>
+      html, body {
+        height: 100%;
+        padding:0;
+        margin:0;
+      }
+      #markmap {
+        height: 100%;
+      }
+      @media (max-width: 414px) {
+        #markmap {
+          height: 100%;
+        }
+      }
+    </style>
+  </head></head>
+      <body>
+        <svg id="markmap" style="width: 100%;"></svg>
+        <script src="https://cdn.jsdelivr.net/npm/d3@6"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markmap-view"></script>
+        <script>
+          const { Markmap, loadCSS, loadJS } = window.markmap;
+          const styles = [{"type":"stylesheet","data":{"href":"https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"}},{"type":"stylesheet","data":{"href":"https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism.css"}}];
+          const scripts = [{"type":"iife","data":{}},{"type":"script","data":{"src":"https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js","defer":true}}];
+          const root = {"t":"heading","d":1,"p":{"lines":[0,1]},"v":"Web前端知识体系","c":[{"t":"heading","d":2,"p":{"lines":[2,3]},"v":"编程基础","c":[{"t":"list_item","d":4,"p":{"lines":[3,4]},"v":"分支1"},{"t":"list_item","d":4,"p":{"lines":[4,5]},"v":"分支2"}]},{"t":"heading","d":2,"p":{"lines":[6,7]},"v":"语法和 API"},{"t":"heading","d":2,"p":{"lines":[8,9]},"v":"框架"}]};
+
+          // 1. load assets
+          if (styles && styles.length) loadCSS(styles);
+          if (scripts && scripts.length) loadJS(scripts, { getMarkmap: () => window.markmap });
+
+          // 2. create markmap
+          Markmap.create('#markmap', null, root);
+
+          // or pass an SVG element directly
+          const svgEl = document.querySelector('#markmap');
+          Markmap.create(svgEl, null, data);
+        </script>
+      </body>
+    </html>
